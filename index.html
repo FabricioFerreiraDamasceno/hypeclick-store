@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HypeClick Now | Premium Handpicked Offers & Reviews</title>
+    <style>
+        :root {
+            --primary-color: #ff007f;
+            --secondary-color: #111;
+            --background-color: #0b0c10;
+            --card-bg: #1f2833;
+            --text-color: #c5c6c7;
+            --title-color: #ffffff;
+            --accent-color: #45f3ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f2833, #0b0c10);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        header h1 {
+            color: var(--title-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        header h1 span {
+            color: var(--primary-color);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: var(--title-color);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Product Grid Style */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 127, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .product-badge {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 5px 12px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            border-radius: 20px;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background-color: #121212;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            color: var(--title-color);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: #a0a5ab;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .product-price {
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        .product-price span {
+            display: block;
+            font-size: 1.25rem;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: background 0.2s ease;
+            text-align: center;
+        }
+
+        .cta-btn:hover {
+            background-color: #e0006c;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HypeClick<span>Now</span></h1>
+        <p>Your Ultimate Gateway to Exclusive High-Ticket Products, Verified Reviews, and Limited-Time Offers.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Featured Trending Offers</h2>
+        
+        <div class="product-grid">
+            
+            <!-- PRODUCT 1 (EXAMPLE: ALPHA DRIVE / SEXUAL HEALTH) -->
+            <div class="product-card">
+                <div class="image-container" style="position: relative;">
+                    <span class="product-badge">Top Seller</span>
+                    <!-- Add your product image url here -->
+                    <div style="font-size: 3rem;">🔥</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Men's Health</div>
+                    <h3 class="product-title">Alpha Drive Supplement</h3>
+                    <p class="product-description">Supercharge your passion, stamina, and energy. Formulated with premium herbal ingredients for optimal performance and healthy sex drive.</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            Starting from
+                            <span>$69.00</span>
+                        </div>
+                        <!-- Redirect directly to the official affiliate landing page or internal pre-sell -->
+                        <a href="https://hypeclicknow.com/alpha-drive" class="cta-btn">Claim Offer →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 (EXAMPLE: DIET & WEIGHT LOSS) -->
+            <div class="product-card">
+                <div class="image-container" style="position: relative;">
+                    <span class="product-badge" style="background-color: #2ecc71;">Diet Secret</span>
+                    <div style="font-size: 3rem;">🥑</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Weight Loss</div>
+                    <h3 class="product-title">Keto Trim Maximum</h3>
+                    <p class="product-description">Fast-track your weight loss journey with advanced ketones. Boost metabolism, burn stubborn fat, and maintain crystal-clear energy levels all day.</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            Starting from
+                            <span>$49.00</span>
+                        </div>
+                        <a href="#" class="cta-btn">Claim Offer →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 (EXAMPLE: FINANCE/WEALTH) -->
+            <div class="product-card">
+                <div class="image-container" style="position: relative;">
+                    <span class="product-badge" style="background-color: var(--accent-color); color: #000;">New Discovery</span>
+                    <div style="font-size: 3rem;">📈</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Wealth & Investing</div>
+                    <h3 class="product-title">Crypto Wealth Multiplier</h3>
+                    <p class="product-description">The ultimate step-by-step masterclass to automated crypto trading. Learn how everyday people are capitalizing on the next big bull run.</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            One-time purchase
+                            <span>$97.00</span>
+                        </div>
+                        <a href="#" class="cta-btn">Claim Offer →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 HypeClickNow. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="https://hypeclicknow.com/privacy-policy">Privacy Policy</a> | 
+            <a href="https://hypeclicknow.com/terms-of-service">Terms of Service</a> | 
+            <a href="https://hypeclicknow.com/contact">Contact Us</a>
+        </p>
+        <p style="margin-top: 15px; font-size: 0.75rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+            Disclaimer: The reviews and articles on this site are for informational purposes only. When you buy through links on our site, we may earn an affiliate commission from the merchant at no extra cost to you.
+        </p>
+    </footer>
+
+</body>
+</html>
