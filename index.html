@@ -31,7 +31,7 @@
 
         header {
             background: linear-gradient(135deg, #1f2833, #0b0c10);
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
             border-bottom: 3px solid var(--primary-color);
         }
@@ -118,12 +118,13 @@
         .image-container {
             position: relative;
             width: 100%;
-            height: 220px;
+            height: 250px;
             background-color: #121212;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding: 15px;
         }
 
         .image-container img {
@@ -169,38 +170,29 @@
         .product-footer {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 15px;
             margin-top: auto;
-        }
-
-        .product-price {
-            font-size: 0.9rem;
-            color: #fff;
-        }
-
-        .product-price span {
-            display: block;
-            font-size: 1.25rem;
-            color: #2ecc71;
-            font-weight: bold;
+            width: 100%;
         }
 
         .cta-btn {
             background-color: var(--primary-color);
             color: #ffffff;
             text-decoration: none;
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 0.95rem;
-            transition: background 0.2s ease;
+            font-size: 1rem;
+            transition: background 0.2s ease, transform 0.2s ease;
             text-align: center;
+            width: 100%;
         }
 
         .cta-btn:hover {
             background-color: #e0006c;
+            transform: translateY(-2px);
         }
 
         /* Footer */
@@ -245,64 +237,54 @@
         
         <div class="product-grid">
             
-            <!-- PRODUCT 1 (EXAMPLE: ALPHA DRIVE / SEXUAL HEALTH) -->
+            <!-- PRODUCT 1: ALPHA DRIVE (SEXUAL HEALTH) -->
             <div class="product-card">
-                <div class="image-container" style="position: relative;">
+                <div class="image-container">
                     <span class="product-badge">Top Seller</span>
-                    <!-- Add your product image url here -->
-                    <div style="font-size: 3rem;">🔥</div>
+                    <!-- Imagem Oficial do Alpha Drive no Pedestal -->
+                    <img src="https://assets.cdn.filesafe.space/9p7fOby8M2hk3OzWWT89/media/65a692e528a68b7e78b79fc0.png" alt="Alpha Drive Official Bottle Display">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Men's Health</div>
                     <h3 class="product-title">Alpha Drive Supplement</h3>
                     <p class="product-description">Supercharge your passion, stamina, and energy. Formulated with premium herbal ingredients for optimal performance and healthy sex drive.</p>
                     <div class="product-footer">
-                        <div class="product-price">
-                            Starting from
-                            <span>$69.00</span>
-                        </div>
-                        <!-- Redirect directly to the official affiliate landing page or internal pre-sell -->
-                        <a href="https://hypeclicknow.com/alpha-drive" class="cta-btn">Claim Offer →</a>
+                        <!-- Redirect directly to the internal pre-sell -->
+                        <a href="https://hypeclicknow.com/alpha-drive" class="cta-btn">Claim Limited Offer →</a>
                     </div>
                 </div>
             </div>
 
-            <!-- PRODUCT 2 (EXAMPLE: DIET & WEIGHT LOSS) -->
+            <!-- PRODUCT 2: KETO TRIM MAXIMUM (WEIGHT LOSS) -->
             <div class="product-card">
-                <div class="image-container" style="position: relative;">
+                <div class="image-container">
                     <span class="product-badge" style="background-color: #2ecc71;">Diet Secret</span>
-                    <div style="font-size: 3rem;">🥑</div>
+                    <!-- Imagem Conceitual de Wellness e Keto Slimming -->
+                    <img src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&q=80&w=600" alt="Premium Keto Trim Bottle">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Weight Loss</div>
                     <h3 class="product-title">Keto Trim Maximum</h3>
                     <p class="product-description">Fast-track your weight loss journey with advanced ketones. Boost metabolism, burn stubborn fat, and maintain crystal-clear energy levels all day.</p>
                     <div class="product-footer">
-                        <div class="product-price">
-                            Starting from
-                            <span>$49.00</span>
-                        </div>
-                        <a href="#" class="cta-btn">Claim Offer →</a>
+                        <a href="#" class="cta-btn">Claim Limited Offer →</a>
                     </div>
                 </div>
             </div>
 
-            <!-- PRODUCT 3 (EXAMPLE: FINANCE/WEALTH) -->
+            <!-- PRODUCT 3: CRYPTO WEALTH MULTIPLIER (FINANCE) -->
             <div class="product-card">
-                <div class="image-container" style="position: relative;">
+                <div class="image-container">
                     <span class="product-badge" style="background-color: var(--accent-color); color: #000;">New Discovery</span>
-                    <div style="font-size: 3rem;">📈</div>
+                    <!-- Imagem Conceitual de Finanças/Mercado Digital -->
+                    <img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&q=80&w=600" alt="Crypto Masterclass Online">
                 </div>
                 <div class="product-info">
                     <div class="product-category">Wealth & Investing</div>
                     <h3 class="product-title">Crypto Wealth Multiplier</h3>
                     <p class="product-description">The ultimate step-by-step masterclass to automated crypto trading. Learn how everyday people are capitalizing on the next big bull run.</p>
                     <div class="product-footer">
-                        <div class="product-price">
-                            One-time purchase
-                            <span>$97.00</span>
-                        </div>
-                        <a href="#" class="cta-btn">Claim Offer →</a>
+                        <a href="#" class="cta-btn">Claim Limited Offer →</a>
                     </div>
                 </div>
             </div>
